@@ -1,0 +1,45 @@
+{
+  "name": "expense-manager",
+  "version": "1.0.0",
+  "description": "A beautiful expense tracking application for macOS",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently \"npm run dev:react\" \"wait-on http://localhost:3000 && electron .\"",
+    "dev:react": "vite",
+    "build:react": "vite build",
+    "build": "npm run build:react && electron-builder",
+    "pack": "electron-builder --dir"
+  },
+  "build": {
+    "appId": "com.expensemanager.app",
+    "productName": "Expense Manager",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.finance",
+      "target": "dmg"
+    },
+    "files": [
+      "src/main/**/*",
+      "dist-react/**/*"
+    ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.18",
+    "concurrently": "^8.2.2",
+    "electron": "^28.2.3",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.1.4",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "electron-log": "^5.1.1",
+    "recharts": "^2.12.2",
+    "uuid": "^9.0.1"
+  }
+}

@@ -349,7 +349,11 @@ function App() {
 
             {cardTab === 'netvalue' && (
               <div className="w-full p-6 overflow-y-auto">
-                <NetValueCalculator cards={cards} />
+                <NetValueCalculator 
+                  cards={cards} 
+                  monthlySpend={monthlySpend}
+                  onUpdateSpend={updateMonthlySpend}
+                />
               </div>
             )}
 

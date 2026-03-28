@@ -19,7 +19,9 @@
     },
     "mac": {
       "category": "public.app-category.finance",
-      "target": "dmg"
+      "target": "dmg",
+      "codeSign": false,
+      "notarize": false
     },
     "files": [
       "src/main/**/*",
